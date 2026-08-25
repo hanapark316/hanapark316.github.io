@@ -63,7 +63,7 @@
       color: #111;
       font-family: Arial, sans-serif;
       font-size: 14px;
-      background: #ffffff;
+      background: #fff;
     }
 
     .profile-links a:hover {
@@ -77,10 +77,6 @@
       line-height: 1.65;
     }
 
-    .bio p {
-      margin: 0;
-    }
-
     .section {
       margin-top: 52px;
     }
@@ -88,7 +84,7 @@
     .section-title {
       margin: 0 0 18px 0;
       padding-bottom: 7px;
-      border-bottom: 1px solid #dddddd;
+      border-bottom: 1px solid #ddd;
       font-size: 21px;
       font-weight: normal;
       text-transform: uppercase;
@@ -103,33 +99,30 @@
       border-left: 2px solid #e0e0e0;
     }
 
-    .publication-title,
-    .working-paper-title {
+    .item-title {
       margin: 0 0 4px 0;
       font-size: 17px;
       font-weight: bold;
       line-height: 1.45;
     }
 
-    .publication-authors,
-    .working-paper-authors {
+    .item-authors {
       margin: 0 0 3px 0;
       font-size: 16px;
     }
 
-    .publication-journal,
-    .working-paper-status {
+    .item-meta {
       margin: 0 0 7px 0;
       font-size: 15px;
       font-style: italic;
       color: #555;
     }
 
-    details {
+    details.abstract-details {
       margin-top: 7px;
     }
 
-    summary {
+    details.abstract-details > summary {
       display: inline-block;
       cursor: pointer;
       font-family: Arial, sans-serif;
@@ -138,7 +131,7 @@
       font-weight: bold;
     }
 
-    summary:hover {
+    details.abstract-details > summary:hover {
       text-decoration: underline;
     }
 
@@ -148,6 +141,96 @@
       font-size: 15px;
       line-height: 1.65;
       color: #333;
+    }
+
+    details.accordion {
+      margin-bottom: 13px;
+    }
+
+    details.accordion > summary {
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: bold;
+      list-style: none;
+    }
+
+    details.accordion > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.accordion > summary::before {
+      content: "›";
+      display: inline-block;
+      margin-right: 10px;
+      color: #9b1c1c;
+      font-weight: normal;
+    }
+
+    details.accordion[open] > summary::before {
+      transform: rotate(90deg);
+    }
+
+    .accordion-content {
+      margin: 12px 0 20px 27px;
+    }
+
+    .presentation {
+      margin-bottom: 18px;
+    }
+
+    .presentation-title {
+      margin: 0 0 3px 0;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .presentation-meta {
+      margin: 0;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .education-row {
+      margin-bottom: 15px;
+      padding-left: 18px;
+      position: relative;
+      font-size: 17px;
+    }
+
+    .education-row::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: #9b1c1c;
+    }
+
+    .education-year {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .simple-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .simple-list li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .contact-line {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .contact-line a {
+      color: #9b1c1c;
+      text-decoration: none;
+    }
+
+    .contact-line a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 650px) {
@@ -174,260 +257,567 @@
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="profile-header">
 
-      <img
-        src="Hana Park.jpg"
-        alt="Hana Park"
-        class="profile-photo"
-      >
+  <!-- PROFILE -->
 
-      <div class="profile-info">
+  <div class="profile-header">
 
-        <h1>Hana Park</h1>
+    <img
+      src="Hana Park.jpg"
+      alt="Hana Park"
+      class="profile-photo"
+    >
 
-        <p>Ph.D. Candidate in Communication</p>
+    <div class="profile-info">
 
-        <p>Drexel University</p>
+      <h1>Hana Park</h1>
 
-        <div class="profile-links">
+      <p>Ph.D. Candidate in Communication</p>
+      <p>Drexel University</p>
 
-          <a href="mailto:hp484@drexel.edu">
-            Email
-          </a>
+      <div class="profile-links">
 
-          <a
-            href="https://www.linkedin.com/in/hanapark316/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
+        <a href="mailto:hp484@drexel.edu">Email</a>
 
-          <a
-            href="https://scholar.google.com/citations?user=ilzxSPAAAAAJ&amp;hl=en&amp;oi=ao"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Google Scholar
-          </a>
+        <a
+          href="https://www.linkedin.com/in/hanapark316/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
 
-          <a
-            href="https://www.researchgate.net/profile/Hana-Park-12?ev=hdr_xprf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ResearchGate
-          </a>
+        <a
+          href="https://scholar.google.com/citations?user=ilzxSPAAAAAJ&amp;hl=en&amp;oi=ao"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google Scholar
+        </a>
 
+        <a
+          href="https://www.researchgate.net/profile/Hana-Park-12?ev=hdr_xprf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ResearchGate
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="bio">
+    <p>
+      I am a Ph.D. Candidate in Communication at Drexel University. My research
+      examines how communication and persuasion shape human behavior, beliefs,
+      and goal formation. I am particularly interested in how these processes
+      unfold in social media and public relations contexts, including how
+      messages, communicators, and digital environments influence people's
+      perceptions, attitudes, and responses.
+    </p>
+  </div>
+
+
+  <!-- JOB MARKET PAPER -->
+
+  <section class="section">
+
+    <h2 class="section-title">Job Market Paper</h2>
+
+    <div class="jmp">
+
+      <p class="item-title">
+        When Relatability Backfires in Human and Virtual Influencer Self-Presentation
+      </p>
+
+      <p class="item-authors">
+        Hana Park and Hyunmin Lee
+      </p>
+
+      <details class="abstract-details">
+        <summary>Abstract</summary>
+
+        <div class="abstract">
+          This study examines how audiences respond to human and virtual
+          influencers' self-presentation strategies in influencer-mediated
+          strategic communication. Drawing on Expectancy Violations Theory,
+          the study proposes that relatable and aspirational self-presentation
+          may be evaluated differently depending on whether the communicator is
+          a human influencer or a virtual influencer. Using a 2 × 2
+          between-subjects experiment, the study will test the effects of
+          influencer type and self-presentation strategy on perceived expectancy
+          violation valence, attitude toward the organization, social media
+          engagement intention, and campaign supportive intention. By comparing
+          how the same self-presentation cues are interpreted across human and
+          virtual communicators, this study contributes to research on influencer
+          communication, virtual influencers, and expectancy violations in
+          digital public relations contexts.
+        </div>
+      </details>
+
+    </div>
+
+  </section>
+
+
+  <!-- PUBLICATIONS -->
+
+  <section class="section">
+
+    <h2 class="section-title">Publications</h2>
+
+    <div class="publication">
+
+      <p class="item-title">
+        Performing Communicative Legitimacy: English-Language Responses to Spanish Posts in Multilingual News Spaces
+      </p>
+
+      <p class="item-authors">
+        Hana Park and Asta Zelenkauskaite
+      </p>
+
+      <p class="item-meta">
+        Studies in Communication and Media, 2026
+      </p>
+
+      <details class="abstract-details">
+        <summary>Abstract</summary>
+
+        <div class="abstract">
+          This study examines how language is used to negotiate communicative
+          hierarchies online. Using a mirroring design, we compare English- and
+          Spanish-language user responses to Spanish-language posts by The New
+          York Times on X to assess how audiences interpret, contest, or
+          delegitimize linguistic diversity within U.S.-based digital news
+          media spaces. Findings show that English-language comments appeared
+          more frequently than Spanish-language comments on Spanish-language
+          posts, and that unrelated types of comments were substantially more
+          common in English than in Spanish. Whereas English-language unrelated
+          comments frequently targeted The New York Times for its use of Spanish
+          and framed multilingualism as an illegitimate intrusion,
+          Spanish-language unrelated comments were less frequent and were
+          dominated primarily by political campaigning rather than language
+          policing.
+        </div>
+      </details>
+
+    </div>
+
+
+    <div class="publication">
+
+      <p class="item-title">
+        Framing Generative AI: An Analysis of Impact, Quoted Sources, and Attributions of Responsibilities in U.S. Elite Media
+      </p>
+
+      <p class="item-authors">
+        Hyunmin Lee and Hana Park
+      </p>
+
+      <p class="item-meta">
+        Journalism &amp; Mass Communication Quarterly, 2026
+      </p>
+
+      <details class="abstract-details">
+        <summary>Abstract</summary>
+
+        <div class="abstract">
+          This paper examined how elite news media frame the impact of generative
+          AI on the cultural, social, economic, and political domains of life and
+          analyzed the different types of ethical concerns surrounding generative
+          AI and to whom the media attribute responsibility for creating and
+          solving those concerns. The results of a content analysis (N = 2,879)
+          of The New York Times and The Wall Street Journal show that societal
+          and economic impacts were the most frequently discussed when reporting
+          about generative AI.
+        </div>
+      </details>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORK UNDER REVIEW -->
+
+  <section class="section">
+
+    <h2 class="section-title">Select Work Under Review</h2>
+
+    <div class="working-paper">
+
+      <p class="item-title">
+        Going Public First: How Organizations Begin Communicating Product Hazards under Regulatory Oversight
+      </p>
+
+      <p class="item-authors">
+        Hana Park and Youngdai Won
+      </p>
+
+      <p class="item-meta">
+        Under review at Public Relations Review
+      </p>
+
+    </div>
+
+
+    <div class="working-paper">
+
+      <p class="item-title">
+        Answering Near the Deadline: Temporal Rules and Uneven Governance in an Organizational Listening Architecture
+      </p>
+
+      <p class="item-authors">
+        Hana Park and Youngdai Won
+      </p>
+
+      <p class="item-meta">
+        Under review at Communication Research
+      </p>
+
+    </div>
+
+
+    <div class="working-paper">
+
+      <p class="item-title">
+        Advertising, Customer Equity and Concavity of Risk under Profit Margin Uncertainty: Integrated Model in both Product and Capital Market
+      </p>
+
+      <p class="item-authors">
+        Chaehwan Won, Hana Park, Youngdai Won, and Peter Y. Won
+      </p>
+
+      <p class="item-meta">
+        Under review at Journal of Advertising
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONFERENCES -->
+
+  <section class="section">
+
+    <h2 class="section-title">Conference Presentations</h2>
+
+
+    <details class="accordion">
+
+      <summary>Korean Academic Society of Business Administration</summary>
+
+      <div class="accordion-content">
+
+        <div class="presentation">
+          <p class="presentation-title">
+            Advertising, Customer Equity and Concavity of Risk Under Profit Margin Uncertainty: Integrated Model in Both Product and Capital Markets
+          </p>
+          <p class="presentation-meta">
+            Chaehwan Won, Hana Park, Youngdai Won, and Peter Y. Won,
+            South Korea (2026)
+          </p>
         </div>
 
       </div>
 
+    </details>
+
+
+    <details class="accordion">
+
+      <summary>International Association for Media and Communication Research (IAMCR)</summary>
+
+      <div class="accordion-content">
+
+        <div class="presentation">
+          <p class="presentation-title">
+            Why the Fuck Is in Spanish?
+          </p>
+          <p class="presentation-meta">
+            Asta Zelenkauskaite and Hana Park, Singapore (2025)
+          </p>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="accordion">
+
+      <summary>Mid-Atlantic Popular &amp; American Culture Association (MAPACA)</summary>
+
+      <div class="accordion-content">
+
+        <div class="presentation">
+          <p class="presentation-title">
+            Pet Influencers: Redefining Human-Animal Dynamics
+          </p>
+          <p class="presentation-meta">
+            Hana Park, Atlantic City, NJ (2024)
+          </p>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="accordion">
+
+      <summary>National Communication Association (NCA)</summary>
+
+      <div class="accordion-content">
+
+        <div class="presentation">
+          <p class="presentation-title">
+            Stakeholder Reactions to Corporate Social Advocacy: An Investigation of Message Strength and Issue Type
+          </p>
+          <p class="presentation-meta">
+            Hyunmin Lee and Hana Park, National Harbor, MD (2023)
+          </p>
+        </div>
+
+      </div>
+
+    </details>
+
+  </section>
+
+
+  <!-- TEACHING -->
+
+  <section class="section">
+
+    <h2 class="section-title">Teaching Experience</h2>
+
+
+    <details class="accordion">
+
+      <summary>Drexel University — Instructor</summary>
+
+      <div class="accordion-content">
+
+        <div class="presentation">
+          <p class="presentation-title">COM 181 — PR Principles</p>
+          <p class="presentation-meta">Spring 2025</p>
+        </div>
+
+        <div class="presentation">
+          <p class="presentation-title">COM 310 — Technical Communication</p>
+          <p class="presentation-meta">
+            Fall 2023; Summer 2023; Summer 2024; Fall 2024; Spring 2025
+          </p>
+        </div>
+
+        <div class="presentation">
+          <p class="presentation-title">COM 345 — Intercultural Communication</p>
+          <p class="presentation-meta">Winter 2024; Winter 2025</p>
+        </div>
+
+        <div class="presentation">
+          <p class="presentation-title">COM 111 — Principles of Communication</p>
+          <p class="presentation-meta">Spring 2024</p>
+        </div>
+
+        <div class="presentation">
+          <p class="presentation-title">COM 270 — Business Communication</p>
+          <p class="presentation-meta">Fall 2025; Spring 2026; Summer 2026</p>
+        </div>
+
+        <div class="presentation">
+          <p class="presentation-title">COM 200 — Authenticity in Digital Communication</p>
+          <p class="presentation-meta">Winter 2026</p>
+        </div>
+
+        <div class="presentation">
+          <p class="presentation-title">COM 230 — Techniques of Speaking</p>
+          <p class="presentation-meta">Winter 2025; Spring 2026</p>
+        </div>
+
+      </div>
+
+    </details>
+
+
+    <details class="accordion">
+
+      <summary>Drexel University — Teaching Assistant</summary>
+
+      <div class="accordion-content">
+
+        <ul class="simple-list">
+          <li>Techniques of Speaking</li>
+          <li>Reputation Management in PR</li>
+          <li>PR Principles</li>
+          <li>Principles of Communication</li>
+          <li>Business Communication</li>
+        </ul>
+
+      </div>
+
+    </details>
+
+  </section>
+
+
+  <!-- EDUCATION -->
+
+  <section class="section">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="education-row">
+      <strong>Drexel University</strong> — Ph.D., Communication, Culture, and Media
+      <span class="education-year">2027 expected</span>
     </div>
 
-    <div class="bio">
-      <p>
-        I am a Ph.D. Candidate in Communication at Drexel University. My research
-        examines how communication and persuasion shape human behavior, beliefs,
-        and goal formation. I am particularly interested in how these processes
-        unfold in social media and public relations contexts, including how
-        messages, communicators, and digital environments influence people's
-        perceptions, attitudes, and responses.
-      </p>
+    <div class="education-row">
+      <strong>Catholic University of Korea</strong> — B.A., English Language and Culture
+      <span class="education-year">2015</span>
     </div>
 
-
-    <section class="section">
-
-      <h2 class="section-title">Job Market Paper</h2>
-
-      <div class="jmp">
-
-        <p class="publication-title">
-          When Relatability Backfires in Human and Virtual Influencer Self-Presentation
-        </p>
-
-        <p class="publication-authors">
-          Hana Park and Hyunmin Lee
-        </p>
-
-        <p class="publication-journal">
-          Under review
-        </p>
-
-        <details>
-          <summary>Abstract</summary>
-
-          <div class="abstract">
-            This study examines how audiences respond to human and virtual
-            influencers' self-presentation strategies in influencer-mediated
-            strategic communication. Drawing on Expectancy Violations Theory,
-            the study proposes that relatable and aspirational self-presentation
-            may be evaluated differently depending on whether the communicator
-            is a human influencer or a virtual influencer. Using a 2 × 2
-            between-subjects experiment, the study will test the effects of
-            influencer type and self-presentation strategy on perceived
-            expectancy violation valence, attitude toward the organization,
-            social media engagement intention, and campaign supportive intention.
-            By comparing how the same self-presentation cues are interpreted
-            across human and virtual communicators, this study contributes to
-            research on influencer communication, virtual influencers, and
-            expectancy violations in digital public relations contexts.
-          </div>
-        </details>
-
-      </div>
-
-    </section>
+  </section>
 
 
-    <section class="section">
+  <!-- HONORS -->
 
-      <h2 class="section-title">Publications</h2>
+  <section class="section">
+
+    <h2 class="section-title">Honors &amp; Grants</h2>
+
+    <ul class="simple-list">
+      <li>Dewey Research Data Grant ($7,200), 2024</li>
+      <li>Student Center for Diversity &amp; Inclusion Micro Grant ($350), 2024</li>
+    </ul>
+
+  </section>
 
 
-      <div class="publication">
+  <!-- SERVICE -->
 
-        <p class="publication-title">
-          Performing Communicative Legitimacy: English-Language Responses to Spanish Posts in Multilingual News Spaces
-        </p>
+  <section class="section">
 
-        <p class="publication-authors">
-          Hana Park and Asta Zelenkauskaite
-        </p>
+    <h2 class="section-title">Professional Service</h2>
 
-        <p class="publication-journal">
-          Studies in Communication and Media, 2026
-        </p>
+    <details class="accordion">
 
-        <details>
-          <summary>Abstract</summary>
+      <summary>Conference Reviewing</summary>
 
-          <div class="abstract">
-            This study examines how language is used to negotiate communicative
-            hierarchies online. Using a mirroring design, we compare English- and
-            Spanish-language user responses to Spanish-language posts by The New
-            York Times on X to assess how audiences interpret, contest, or
-            delegitimize linguistic diversity within U.S.-based digital news
-            media spaces. Findings show that English-language comments appeared
-            more frequently than Spanish-language comments on Spanish-language
-            posts, and that unrelated types of comments were substantially more
-            common in English than in Spanish. Whereas English-language unrelated
-            comments frequently targeted The New York Times for its use of Spanish
-            and framed multilingualism as an illegitimate intrusion,
-            Spanish-language unrelated comments were less frequent and were
-            dominated primarily by political campaigning rather than language
-            policing. We argue that these responses reveal how language visibility
-            in digital news spaces becomes a site where communicative legitimacy,
-            national belonging, and media authority are publicly contested.
-          </div>
-        </details>
+      <div class="accordion-content">
+
+        <ul class="simple-list">
+          <li>
+            Association for Education in Journalism and Mass Communication
+            (AEJMC), 2026
+          </li>
+
+          <li>
+            International Association for Media and Communication Research,
+            2025
+          </li>
+        </ul>
 
       </div>
 
+    </details>
 
-      <div class="publication">
+  </section>
 
-        <p class="publication-title">
-          Framing Generative AI: An Analysis of Impact, Quoted Sources, and Attributions of Responsibilities in U.S. Elite Media
-        </p>
 
-        <p class="publication-authors">
-          Hyunmin Lee and Hana Park
-        </p>
+  <!-- ACTIVITIES -->
 
-        <p class="publication-journal">
-          Journalism &amp; Mass Communication Quarterly, 2026
-        </p>
+  <section class="section">
 
-        <details>
-          <summary>Abstract</summary>
+    <h2 class="section-title">Consulting Projects &amp; Activities</h2>
 
-          <div class="abstract">
-            This paper examined how elite news media frame the impact of
-            generative AI on the cultural, social, economic, and political domains
-            of life and analyzed the different types of ethical concerns
-            surrounding generative AI and to whom the media attribute
-            responsibility for creating and solving the ethical concerns of using
-            generative AI. The results of a content analysis (N = 2,879) of
-            The New York Times and The Wall Street Journal show that societal and
-            economic impacts were the most frequently discussed when reporting
-            about generative AI. When discussing who is responsible for causing
-            and solving generative AI issues, societal-level attributions were
-            mentioned significantly more often than individual-level attributions,
-            and thematic frames were much more likely to appear than episodic
-            frames. There were also reporting differences between the two
-            newspapers. Further theoretical implications and future research
-            directions are presented.
-          </div>
-        </details>
+    <details class="accordion">
+
+      <summary>Comcast</summary>
+
+      <div class="accordion-content">
+
+        <ul class="simple-list">
+          <li>Consulting project, 2020</li>
+          <li>Focus: e-Sports, tournaments, teamwork, and employee well-being</li>
+          <li>Methods/devices: fNIRs, EDA sensor, and heart-rate sensor</li>
+        </ul>
 
       </div>
 
-    </section>
+    </details>
 
 
-    <section class="section">
+    <details class="accordion">
 
-      <h2 class="section-title">Select Work Under Review</h2>
+      <summary>CCM Colloquium Committee</summary>
 
+      <div class="accordion-content">
 
-      <div class="working-paper">
-
-        <p class="working-paper-title">
-          Going Public First: How Organizations Begin Communicating Product Hazards under Regulatory Oversight
-        </p>
-
-        <p class="working-paper-authors">
-          Hana Park and Youngdai Won
-        </p>
-
-        <p class="working-paper-status">
-          Under review at Public Relations Review
-        </p>
+        <ul class="simple-list">
+          <li>Committee Member, 2024–present</li>
+          <li>Organized and coordinated speaker series</li>
+          <li>Collaborated on colloquium topics and themes</li>
+        </ul>
 
       </div>
 
+    </details>
 
-      <div class="working-paper">
-
-        <p class="working-paper-title">
-          Answering Near the Deadline: Temporal Rules and Uneven Governance in an Organizational Listening Architecture
-        </p>
-
-        <p class="working-paper-authors">
-          Hana Park and Youngdai Won
-        </p>
-
-        <p class="working-paper-status">
-          Under review at Communication Research
-        </p>
-
-      </div>
+  </section>
 
 
-      <div class="working-paper">
+  <!-- SKILLS -->
 
-        <p class="working-paper-title">
-          Advertising, Customer Equity and Concavity of Risk under Profit Margin Uncertainty: Integrated Model in both Product and Capital Market
-        </p>
+  <section class="section">
 
-        <p class="working-paper-authors">
-          Chaehwan Won, Hana Park, Youngdai Won, and Peter Y. Won
-        </p>
+    <h2 class="section-title">Skills</h2>
 
-        <p class="working-paper-status">
-          Under review at Journal of Advertising
-        </p>
+    <ul class="simple-list">
+      <li>Python</li>
+      <li>SPSS</li>
+      <li>R</li>
+      <li>LaTeX</li>
+      <li>Languages: English and Korean</li>
+    </ul>
 
-      </div>
+  </section>
 
-    </section>
 
-  </div>
+  <!-- CONTACT -->
+
+  <section class="section">
+
+    <h2 class="section-title">Contact</h2>
+
+    <p class="contact-line">
+      Hana Park
+    </p>
+
+    <p class="contact-line">
+      Department of Communication, Drexel University
+    </p>
+
+    <p class="contact-line">
+      3201 Arch Street, Philadelphia, PA 19104
+    </p>
+
+    <p class="contact-line">
+      Email:
+      <a href="mailto:hp484@drexel.edu">hp484@drexel.edu</a>
+    </p>
+
+  </section>
+
+</div>
 
 </body>
 </html>
