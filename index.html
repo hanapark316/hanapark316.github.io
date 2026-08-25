@@ -17,7 +17,7 @@
 
     .container {
       max-width: 880px;
-      margin: 45px auto;
+      margin: 45px auto 0 auto;
       padding: 0 24px;
     }
 
@@ -150,7 +150,7 @@
     details.accordion > summary {
       cursor: pointer;
       font-size: 17px;
-      font-weight: bold;
+      font-weight: normal;
       list-style: none;
     }
 
@@ -190,18 +190,20 @@
       color: #555;
     }
 
-    .education-row {
-      margin-bottom: 15px;
-      padding-left: 18px;
-      position: relative;
+    .education-list,
+    .simple-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .education-list li {
+      margin-bottom: 13px;
       font-size: 17px;
     }
 
-    .education-row::before {
-      content: "›";
-      position: absolute;
-      left: 0;
-      color: #9b1c1c;
+    .simple-list li {
+      margin-bottom: 10px;
+      font-size: 16px;
     }
 
     .education-year {
@@ -209,14 +211,10 @@
       font-size: 15px;
     }
 
-    .simple-list {
+    .skills-line {
       margin: 0;
-      padding-left: 22px;
-    }
-
-    .simple-list li {
-      margin-bottom: 10px;
       font-size: 16px;
+      line-height: 1.7;
     }
 
     .contact-line {
@@ -231,6 +229,12 @@
 
     .contact-line a:hover {
       text-decoration: underline;
+    }
+
+    .page-end {
+      margin-top: 55px;
+      border-top: 2px solid #222;
+      height: 24px;
     }
 
     @media (max-width: 650px) {
@@ -258,9 +262,6 @@
 <body>
 
 <div class="container">
-
-
-  <!-- PROFILE -->
 
   <div class="profile-header">
 
@@ -324,8 +325,6 @@
   </div>
 
 
-  <!-- JOB MARKET PAPER -->
-
   <section class="section">
 
     <h2 class="section-title">Job Market Paper</h2>
@@ -365,8 +364,6 @@
 
   </section>
 
-
-  <!-- PUBLICATIONS -->
 
   <section class="section">
 
@@ -444,8 +441,6 @@
   </section>
 
 
-  <!-- WORK UNDER REVIEW -->
-
   <section class="section">
 
     <h2 class="section-title">Select Work Under Review</h2>
@@ -503,15 +498,12 @@
   </section>
 
 
-  <!-- CONFERENCES -->
-
   <section class="section">
 
     <h2 class="section-title">Conference Presentations</h2>
 
 
     <details class="accordion">
-
       <summary>Korean Academic Society of Business Administration</summary>
 
       <div class="accordion-content">
@@ -527,12 +519,10 @@
         </div>
 
       </div>
-
     </details>
 
 
     <details class="accordion">
-
       <summary>International Association for Media and Communication Research (IAMCR)</summary>
 
       <div class="accordion-content">
@@ -547,12 +537,10 @@
         </div>
 
       </div>
-
     </details>
 
 
     <details class="accordion">
-
       <summary>Mid-Atlantic Popular &amp; American Culture Association (MAPACA)</summary>
 
       <div class="accordion-content">
@@ -567,12 +555,10 @@
         </div>
 
       </div>
-
     </details>
 
 
     <details class="accordion">
-
       <summary>National Communication Association (NCA)</summary>
 
       <div class="accordion-content">
@@ -587,13 +573,10 @@
         </div>
 
       </div>
-
     </details>
 
   </section>
 
-
-  <!-- TEACHING -->
 
   <section class="section">
 
@@ -601,7 +584,6 @@
 
 
     <details class="accordion">
-
       <summary>Drexel University — Instructor</summary>
 
       <div class="accordion-content">
@@ -644,16 +626,13 @@
         </div>
 
       </div>
-
     </details>
 
 
     <details class="accordion">
-
       <summary>Drexel University — Teaching Assistant</summary>
 
       <div class="accordion-content">
-
         <ul class="simple-list">
           <li>Techniques of Speaking</li>
           <li>Reputation Management in PR</li>
@@ -661,34 +640,32 @@
           <li>Principles of Communication</li>
           <li>Business Communication</li>
         </ul>
-
       </div>
-
     </details>
 
   </section>
 
 
-  <!-- EDUCATION -->
-
   <section class="section">
 
     <h2 class="section-title">Education</h2>
 
-    <div class="education-row">
-      <strong>Drexel University</strong> — Ph.D., Communication, Culture, and Media
-      <span class="education-year">2027 expected</span>
-    </div>
+    <ul class="education-list">
 
-    <div class="education-row">
-      <strong>Catholic University of Korea</strong> — B.A., English Language and Culture
-      <span class="education-year">2015</span>
-    </div>
+      <li>
+        <strong>Drexel University</strong> — Ph.D., Communication, Culture, and Media
+        <span class="education-year">2027 expected</span>
+      </li>
+
+      <li>
+        <strong>Catholic University of Korea</strong> — B.A., English Language and Culture
+        <span class="education-year">2015</span>
+      </li>
+
+    </ul>
 
   </section>
 
-
-  <!-- HONORS -->
 
   <section class="section">
 
@@ -702,14 +679,11 @@
   </section>
 
 
-  <!-- SERVICE -->
-
   <section class="section">
 
     <h2 class="section-title">Professional Service</h2>
 
     <details class="accordion">
-
       <summary>Conference Reviewing</summary>
 
       <div class="accordion-content">
@@ -727,20 +701,16 @@
         </ul>
 
       </div>
-
     </details>
 
   </section>
 
-
-  <!-- ACTIVITIES -->
 
   <section class="section">
 
     <h2 class="section-title">Consulting Projects &amp; Activities</h2>
 
     <details class="accordion">
-
       <summary>Comcast</summary>
 
       <div class="accordion-content">
@@ -752,12 +722,10 @@
         </ul>
 
       </div>
-
     </details>
 
 
     <details class="accordion">
-
       <summary>CCM Colloquium Committee</summary>
 
       <div class="accordion-content">
@@ -769,38 +737,26 @@
         </ul>
 
       </div>
-
     </details>
 
   </section>
 
 
-  <!-- SKILLS -->
-
   <section class="section">
 
     <h2 class="section-title">Skills</h2>
 
-    <ul class="simple-list">
-      <li>Python</li>
-      <li>SPSS</li>
-      <li>R</li>
-      <li>LaTeX</li>
-      <li>Languages: English and Korean</li>
-    </ul>
+    <p class="skills-line">
+      Python &nbsp;·&nbsp; SPSS &nbsp;·&nbsp; R &nbsp;·&nbsp; LaTeX
+      &nbsp;·&nbsp; English &nbsp;·&nbsp; Korean
+    </p>
 
   </section>
 
 
-  <!-- CONTACT -->
-
   <section class="section">
 
     <h2 class="section-title">Contact</h2>
-
-    <p class="contact-line">
-      Hana Park
-    </p>
 
     <p class="contact-line">
       Department of Communication, Drexel University
@@ -816,6 +772,9 @@
     </p>
 
   </section>
+
+
+  <div class="page-end"></div>
 
 </div>
 
